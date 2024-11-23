@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +9,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 4rem; /* Applied on mobile by default */
+}
+
+/* Apply no bottom padding on larger screens */
+@media (min-width: 640px) {
+  body {
+    padding-bottom: 0;
+  }
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Hide scrollbar for horizontal scroll */
+.custom-scrollbar::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+}
+
+.custom-scrollbar {
+  -ms-overflow-style: none;  /* For Internet Explorer 10+ */
+  scrollbar-width: none; /* For Firefox */
 }
